@@ -20,10 +20,24 @@ from os.path import join
 from publisher import MpttPublisher
 from publisher.errors import PublisherCantPublish
 
+COLOURS = [
+    ('#ef541f', _('Orange')),
+    ('#e02671', _('Pink')),
+    ('#89438f', _('Purple')),
+    ('#ef541f', _('Orange')),
+    ('#e02671', _('Pink')),
+    ('#89438f', _('Purple')),
+]
+
+
 class Page(MpttPublisher):
     """
     A simple hierarchical page model
     """
+    
+    # LOL
+    colour = models.CharField( _("Colour"), max_length=20, choices=COLOURS, help_text=_('The colour theme. Gets set automatically based on menu position!') )
+    
     MODERATOR_CHANGED = 0
     MODERATOR_NEED_APPROVEMENT = 1
     MODERATOR_NEED_DELETE_APPROVEMENT = 2

@@ -66,7 +66,7 @@ class PageAdmin(model_admin):
     exclude = []
     mandatory_placeholders = ('title', 'slug', 'parent', 'site', 'meta_description', 'meta_keywords', 'page_title', 'menu_title')
     top_fields = []
-    general_fields = ['title', 'slug', ('published', 'in_navigation')]
+    general_fields = ['title', 'slug', 'colour', ('published', 'in_navigation')]
     add_general_fields = ['title', 'slug', 'language', 'template']
     if settings.CMS_DBGETTEXT:
         # no need to select language for page
